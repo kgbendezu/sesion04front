@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>devmaster-Ejercicio16</title>
+    <style>
+    section{
+        width: 800px;
+        height: 500px;
+        background-color: coral;
+        
+        display: flex;  /*tiene dos ejes :PRINCIPAL(HORIZONTAL pero se puede convertir en vertical) 
+        Y SECUNDARIO(VERTICAL)    */
+
+        /* cambio de direccion */
+        flex-direction:row;/*para invertirlo es row-reverse , row pero no modifica nada, colum ,
+         colum-reverse*/ 
+
+         /* distribuir elementos */
+         justify-content: space-between;/*center, flex-start , flex-end , space-around , space-between (se utiliza para menus)*/
+        
+         flex-wrap: wrap; /*nowrap pero no hace ni una funcion se mantiene igual , wrap reverse  empieza desde abajo hacia arriba*/
+
+         /* union flex-direction y flex wrap */
+         /*flex-flow: row wrap; 
+
+         /* alinea elementos en el eje secundario */
+         align-items: flex-start;/*center | flex-start | flex-end | flex-baseline  | stretch (no tiene que tener UN ALTO DEFINIDO OSEA NO PONE EL HEIGHT*/
+
+        /*align-content: space-between; /*flex-end |center | flex start | stretch | space-around(DEJA ESPACIOS EN LA PARTE SUPERIOR EN INFERIOR)*/
+    }   
+    div{
+        width: 100px;
+        /*width: 250px;*/
+        height: 100px;
+        background-color: skyblue;
+    }
+
+    /* con flexbox es posible cambiar el orden de los elementos */
+    section :nth-child(4){
+        order: 0;
+    }
+    section :nth-child(3){
+        order: 1;
+        align-self: center; /*flex-start,baseline,flex-end,center*/
+        
+    }
+    section :nth-child(2){
+        order: 2;
+    }
+    section :nth-child(1){
+        order: 3;
+    }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+       
+    </section>
+</body>
+</html>
